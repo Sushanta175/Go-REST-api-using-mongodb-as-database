@@ -73,7 +73,7 @@ func (uc UserController) DeleteUser(w http.ResponseWriter, r *http.Request, p ht
 
 	oid := bson.ObjectIdHex(id)
 
-	if err := uc.session.DB("mongo-golang").C("Users").RemoveId(oid); err != nil {
+	if err := uc.session.DB("mongo-golang").C("users").RemoveId(oid); err != nil {
 		w.WriteHeader(404)
 	}
 
